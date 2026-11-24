@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102A43">
+<title>Study Tour SMAMDELA 2026</title>
+
+<style>
+:root {
+  --navy: #102A43;
+  --blue: #1769AA;
+  --sky: #4DA3E8;
+  --ice: #EAF4FC;
+  --white: #FFFFFF;
+  --text: #263746;
+  --muted: #647789;
+  --border: #DCE8F1;
+  --shadow: 0 12px 35px rgba(16,42,67,.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { font: inherit; }
+
+.container {
+  width: 86%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.section {
+  padding: 95px 0;
+}
+
+.section h2 {
+  color: var(--navy);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.section-desc {
+  max-width: 650px;
+  color: var(--muted);
+  margin-bottom: 38px;
+}
+
+.dark-section {
+  background: var(--navy);
+  color: white;
+}
+
+.dark-section h2 { color: white; }
+.dark-section .section-desc { color: #D5E4F0; }
+.dark-section .eyebrow { color: #8CC9FA; }
+
+/* SCROLL PROGRESS */
+
+.progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1000;
+  background: transparent;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--sky);
+}
+
+/* NAVIGATION */
+
+.navbar {
+  position: sticky;
+  top: 4px;
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  width: 86%;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.logo span { color: var(--blue); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.nav-links a:hover { color: var(--sky); }
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--ice);
+  color: var(--navy);
+  border-radius: 9px;
+  padding: 8px 13px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(135deg, #F5FAFE, #EAF4FC);
+  padding: 80px 0;
+}
+
+.hero-inner {
+  width: 86%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 1.04;
+  margin-bottom: 25px;
+}
+
+.hero h1 span { color: var(--blue); }
+
+.hero-content > p:not(.eyebrow) {
+  color: var(--muted);
+  max-width: 470px;
+  margin-bottom: 27px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: var(--navy);
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  height: 460px;
+  position: relative;
+}
+
+.hero-image img {
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.image-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  color: var(--navy);
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* INTRO */
+
+.intro {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+.intro p:last-child {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+}
+
+/* FEATURE CARDS */
+
+.feature-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: #173D5D;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-top: 35px;
+}
+
+.feature-card img { height: 370px; }
+
+.feature-info {
+  padding: 38px;
+  align-self: center;
+}
+
+.feature-info span,
+.card-info span {
+  color: #8CC9FA;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.feature-info h3 {
+  font-size: 27px;
+  color: white;
+  margin: 13px 0;
+  line-height: 1.3;
+}
+
+.feature-info p { color: #D8E8F4; }
+
+.light-card {
+  background: var(--ice);
+}
+
+.light-card .feature-info h3 { color: var(--navy); }
+.light-card .feature-info p { color: var(--muted); }
+.light-card .feature-info span { color: var(--blue); }
+
+/* DESTINATIONS */
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.destination-card {
+  background: #173D5D;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.2);
+}
+
+.destination-card img { height: 225px; }
+
+.card-info { padding: 22px; }
+.card-info h3 { color: white; margin: 8px 0; font-size: 20px; }
+.card-info p { color: #D8E8F4; font-size: 14px; }
+
+/* SUBJECT TABS */
+
+.subject-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0 20px;
+}
+
+.subject-tab {
+  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border-radius: 9px;
+  background: white;
+  color: var(--navy);
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.subject-tab.active,
+.subject-tab:hover {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+.subject-panel {
+  display: none;
+  padding: 32px;
+  border-radius: 15px;
+  background: var(--ice);
+  border-left: 5px solid var(--blue);
+  animation: fadeIn .3s ease;
+}
+
+.subject-panel.active { display: block; }
+
+.subject-panel h3 {
+  color: var(--navy);
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.subject-panel p { color: var(--muted); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.highlight {
+  background: var(--ice);
+  border-left: 5px solid var(--blue);
+  padding: 27px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+.highlight h3 { color: var(--navy); margin-bottom: 8px; }
+
+/* VIDEO VLOG */
+
+.video-section {
+  background: #F4F9FD;
+}
+
+.video-wrapper {
+  background: var(--navy);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-height: 650px;
+  background: #071522;
+  object-fit: contain;
+}
+
+.video-caption {
+  padding: 23px 27px;
+  color: white;
+}
+
+.video-caption h3 { margin-bottom: 5px; }
+.video-caption p { color: #C8D9E8; font-size: 14px; }
+
+/* GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  background: var(--ice);
+}
+
+.gallery-item img {
+  height: 220px;
+  transition: .3s;
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-item::after {
+  content: "⊕";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 35px;
+  background: rgba(16,42,67,.25);
+  opacity: 0;
+  transition: .3s;
+}
+
+.gallery-item:hover::after { opacity: 1; }
+
+/* LIGHTBOX */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(4,15,27,.96);
+  justify-content: center;
+  align-items: center;
+  padding: 60px 65px;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-width: 1000px;
+  max-height: 82vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  border: 0;
+  background: rgba(255,255,255,.15);
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 25px;
+}
+
+.lightbox-close { top: 20px; right: 25px; }
+.lightbox-prev { left: 15px; }
+.lightbox-next { right: 15px; }
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 18px;
+  color: white;
+  font-size: 13px;
+}
+
+/* REFLECTION */
+
+.reflection-box {
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 15px;
+  padding: 32px;
+  background: rgba(255,255,255,.06);
+  max-width: 850px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #091E30;
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+footer h2 { margin-bottom: 8px; }
+footer p { color: #C5D8E8; font-size: 14px; }
+
+/* PRESENTATION */
+
+.present-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 200;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 20px;
+  background: var(--blue);
+  color: white;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+body.presentation .navbar,
+body.presentation .present-btn {
+  display: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+  .hero-inner { gap: 30px; }
+  .destination-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media(max-width: 650px) {
+  .container, .nav-inner, .hero-inner { width: 90%; }
+
+  .nav-inner { min-height: 68px; }
+
+  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 22px 5%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .nav-links.active { display: flex; }
+
+  .hero { padding: 55px 0; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-image { height: 310px; }
+
+  .section { padding: 65px 0; }
+
+  .feature-card { grid-template-columns: 1fr; }
+  .feature-card img { height: 250px; }
+  .feature-info { padding: 25px; }
+
+  .destination-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item img { height: 165px; }
+
+  .subject-tabs { gap: 7px; }
+  .subject-tab { padding: 10px 13px; font-size: 13px; }
+  .subject-panel { padding: 23px; }
+
+  .lightbox { padding: 55px 48px; }
+  .lightbox img { max-height: 75vh; }
+  .lightbox-prev { left: 5px; }
+  .lightbox-next { right: 5px; }
+
+  .present-btn { bottom: 14px; right: 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-track">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">KELOMPOK 13<span>.</span></a>
+
+    <nav class="nav-links" id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#campus">Study Campus</a>
+      <a href="#destinasi">Destinasi</a>
+      <a href="#observasi">Observasi</a>
+      <a href="#vlog">Vlog</a>
+      <a href="#dokumentasi">Galeri</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
+  </div>
+</header>
+
+<!-- TOMBOL PRESENTATION MODE -->
+<button class="present-btn" onclick="startPresentation()">
+  ▣ Presentation Mode
+</button>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow">EDUCATIONAL JOURNEY 2026</p>
+
+      <h1>
+        EXPLORE.<br>
+        LEARN.<br>
+        <span>EXPERINCE.
+            </span>
+      </h1>
+
+      <p>
+        Dokumentasi perjalanan Study Tour SMAMDELA 2026.
+        Menjelajahi dunia pendidikan, industri, alam,
+        sejarah, dan budaya.
+      </p>
+
+      <a href="#campus" class="btn">Mulai Jelajahi ↗</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="WhatsApp Image 2026-11-23 at 19.40.18.jpeg" alt="Study Tour SMAMDELA">
+      <div class="image-label">
+        <b>SMAMDELA 2026</b>
+        <p>9–13 November 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section">
+  <div class="container intro">
+    <p class="eyebrow">OUR JOURNEY</p>
+    <h2>Belajar tidak hanya<br>di dalam kelas.</h2>
+    <p>
+      Study Tour merupakan kegiatan pembelajaran di luar
+      kelas yang memberikan pengalaman secara langsung
+      melalui kunjungan ke perguruan tinggi, industri,
+      serta destinasi alam dan budaya.
+    </p>
+  </div>
+</section>
+
+<!-- STUDY CAMPUS -->
+<section class="section dark-section" id="campus">
+  <div class="container">
+    <p class="eyebrow">PART 01 — SURABAYA</p>
+    <h2>Study Campus</h2>
+    <p class="section-desc">
+      Mengenal dunia perguruan tinggi, perkembangan
+      ilmu pengetahuan, dan teknologi.
+    </p>
+
+    <div class="feature-card">
+      <img src="ITS-2.jpg" alt="ITS Surabaya">
+      <div class="feature-info">
+        <span>01 / CAMPUS VISIT</span>
+        <h3>Institut Teknologi Sepuluh Nopember</h3>
+        <p>
+          Institut Teknologi Sepuluh Nopember merupakan perguruan tinggi yang menjadi salah satu tujuan kunjungan edukatif kelompok kami. Dalam kegiatan ini, pengamatan diarahkan pada lingkungan pendidikan tinggi, bidang keilmuan, fasilitas atau inovasi yang diperkenalkan, serta kontribusi perguruan tinggi terhadap pengembangan ilmu pengetahuan dan teknologi.
+Dalam kegiatan study tour, rombongan kami mengunjungi Teater B Institut Teknologi Sepuluh Nopember (ITS). Pada kunjungan tersebut, kami mendapatkan penjelasan mengenai Fakultas Vokasi ITS, mulai dari sejarah awal berdirinya, perkembangan, hingga berbagai prestasi yang telah diraih. Selain itu, kami juga memperoleh informasi mengenai para lulusan Fakultas Vokasi ITS yang telah berhasil berkontribusi di masyarakat. Salah satu contohnya adalah Bapak Eri Cahyadi, yang merupakan Wali Kota Surabaya saat ini. Kunjungan ini memberikan wawasan kepada kami mengenai perkembangan pendidikan vokasi serta peran lulusannya dalam dunia kerja dan pemerintahan
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRI -->
+<section class="section" id="industri">
+  <div class="container">
+    <p class="eyebrow">INDUSTRIAL VISIT</p>
+    <h2>Mengenal Dunia Industri</h2>
+
+    <div class="feature-card light-card">
+      <img src="download.webp" alt="Sari Roti">
+      <div class="feature-info">
+        <span>02 / FOOD INDUSTRY</span>
+        <h3>PT Nippon Indosari Corpindo</h3>
+        <p>
+         PT Nippon Indosari Corpindo merupakan perusahaan yang bergerak Institut Teknologi Sepuluh Nopember merupakan perguruan tinggi yang menjadi salah satu tujuan kunjungan edukatif kelompok kami. Dalam kegiatan ini, pengamatan diarahkan pada lingkungan pendidikan tinggi, bidang keilmuan, fasilitas atau inovasi yang diperkenalkan, serta kontribusi perguruan tinggi terhadap pengembangan ilmu pengetahuan dan teknologi.
+Dalam kegiatan study tour, rombongan kami mengunjungi Teater B Institut Teknologi Sepuluh Nopember (ITS). Pada kunjungan tersebut, kami mendapatkan penjelasan mengenai Fakultas Vokasi ITS, mulai dari sejarah awal berdirinya, perkembangan, hingga berbagai prestasi yang telah diraih. Selain itu, kami juga memperoleh informasi mengenai para lulusan Fakultas Vokasi ITS yang telah berhasil berkontribusi di masyarakat. Salah satu contohnya adalah Bapak Eri Cahyadi, yang merupakan Wali Kota Surabaya saat ini. Kunjungan ini memberikan wawasan kepada kami mengenai perkembangan pendidikan vokasi serta peran lulusannya dalam dunia kerja dan pemerintahan
+dalam industri produk roti. Kunjungan ini menjadi kesempatan untuk mempelajari industri pangan, mulai dari pengenalan produk, tahapan produksi yang diizinkan untuk diamati, penerapan teknologi, pengendalian mutu, tenaga kerja, hingga distribusi produk.
+Dalam kunjungan berikutnya, rombongan kami berkesempatan mengunjungi pabrik Sari Roti yang berada di Pasuruan. Kegiatan diawali dengan mengunjungi galeri untuk melihat dan mempelajari proses produksi roti, mulai dari pengolahan bahan baku, pembuatan adonan, hingga menjadi produk roti yang siap dikemas dan didistribusikan. Kami juga mendapatkan penjelasan bahwa setiap varian roti memiliki proses dan cara produksi yang berbeda sesuai dengan jenis produknya. Melalui kunjungan ini, kami memperoleh pengetahuan mengenai proses produksi dalam industri pangan, penggunaan bahan baku, serta tahapan pengolahan makanan dalam skala pabrik.
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINASI -->
+<section class="section dark-section" id="destinasi">
+  <div class="container">
+    <p class="eyebrow">PART 02 — BALI</p>
+    <h2>Explore Bali</h2>
+    <p class="section-desc">
+      Menjelajahi keindahan alam, warisan sejarah,
+      dan kekayaan budaya Bali.
+    </p>
+
+    <div class="destination-grid">
+
+      <article class="destination-card">
+        <img src="assets/images/bedugul.jpg" alt="Bedugul">
+        <div class="card-info">
+          <span>03 / NATURE</span>
+          <h3>Bedugul</h3>
+          <p>Pengamatan potensi alam dan lingkungan wisata.</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="DSC05666.JPG" alt="Penglipuran">
+        <div class="card-info">
+          <span>04 / CULTURE</span>
+          <h3>Desa Penglipuran</h3>
+          <p>Pelestarian tradisi, lingkungan, dan kearifan lokal.</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="assets/images/pandawa.jpg" alt="Pantai Pandawa">
+        <div class="card-info">
+          <span>05 / BEACH</span>
+          <h3>Pantai Pandawa</h3>
+          <p>Potensi wisata alam dan ekonomi masyarakat.</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="assets/images/gwk.jpg" alt="GWK">
+        <div class="card-info">
+          <span>06 / HERITAGE</span>
+          <h3>GWK & Tari Kecak</h3>
+          <p>Karya monumental dan pertunjukan budaya.</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="assets/images/bajra-sandhi.jpg" alt="Museum Bajra Sandhi">
+        <div class="card-info">
+          <span>07 / HISTORY</span>
+          <h3>Museum Bajra Sandhi</h3>
+          <p>Mengenal sejarah perjuangan rakyat Bali.</p>
+        </div>
+      </article>
+
+      <article class="destination-card">
+        <img src="WhatsApp Image 2026-11-24 at 21.19.04.jpeg" alt="Tanah Lot">
+        <div class="card-info">
+          <span>08 / CULTURE</span>
+          <h3>Tanah Lot</h3>
+          <p>Warisan budaya dan lingkungan pesisir.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- OBSERVASI -->
+<section class="section" id="observasi">
+  <div class="container">
+    <p class="eyebrow">OUR ANALYSIS</p>
+    <h2>Hasil Observasi</h2>
+    <p class="section-desc">
+      Menghubungkan pengalaman Study Tour dengan
+      pembelajaran di sekolah. Pilih mata pelajaran
+      untuk melihat hasil analisis.
+    </p>
+
+    <div class="subject-tabs" role="tablist">
+      <button class="subject-tab active" data-tab="kimia">Kimia</button>
+      <button class="subject-tab" data-tab="biologi">Biologi</button>
+      <button class="subject-tab" data-tab="sejarah">Sejarah</button>
+      <button class="subject-tab" data-tab="inggris">Bahasa Inggris</button>
+    </div>
+
+    <div class="subject-panel active" id="kimia">
+      <h3>01 — Kimia</h3>
+      <p>
+        Jenis sampah, karakteristik bahan, dan pengelolaannya.
+      </p>
+    </div>
+
+    <div class="subject-panel" id="biologi">
+      <h3>02 — Biologi</h3>
+      <p>
+        Keanekaragaman hayati dan keseimbangan ekosistem.
+      </p>
+    </div>
+
+    <div class="subject-panel" id="sejarah">
+      <h3>03 — Sejarah</h3>
+      <p>
+        Perkembangan masyarakat dan pelestarian budaya.
+      </p>
+    </div>
+
+    <div class="subject-panel" id="inggris">
+      <h3>04 — Bahasa Inggris</h3>
+      <p>
+        Asking and giving opinion tentang lingkungan.
+      </p>
+    </div>
+
+    <div class="highlight">
+      <h3>Desa Penglipuran: Menjaga Alam dan Tradisi</h3>
+      <p>
+        Pariwisata berkelanjutan harus mampu menjaga
+        keseimbangan antara perkembangan ekonomi,
+        kelestarian lingkungan, dan keberlanjutan budaya.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO VLOG -->
+<section class="section video-section" id="vlog">
+  <div class="container">
+    <p class="eyebrow">VIDEO DOCUMENTATION</p>
+    <h2>Study Tour Vlog</h2>
+    <p class="section-desc">
+      Saksikan dokumentasi perjalanan Study Tour
+      SMAMDELA 2026 melalui video berikut.
+    </p>
+
+    <div class="video-wrapper">
+      <video controls playsinline preload="metadata">
+        <source src="RECAP PELANTIKAN.mp4" type="video/mp4">
+        Browser kamu belum mendukung pemutaran video.
+      </video>
+
+      <div class="video-caption">
+        <h3>Our Journey — Study Tour 2026</h3>
+        <p>
+          Dokumentasi perjalanan, pengalaman, dan
+          momen selama kegiatan Study Tour.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFLEKSI -->
+<section class="section dark-section" id="refleksi">
+  <div class="container">
+    <p class="eyebrow">FINAL THOUGHTS</p>
+    <h2>Refleksi & Kesimpulan</h2>
+
+    <div class="reflection-box">
+      <p>
+        Berdasarkan kegiatan Study Tour ke Garuda Wisnu Kencana (GWK), kelompok kami memperoleh banyak pengalaman dan pengetahuan baru, khususnya mengenai pentingnya menjaga serta melestarikan kebudayaan Indonesia. Kunjungan ini memberikan kesempatan kepada kami untuk mengenal salah satu karya seni monumental yang menjadi kebanggaan bangsa. Melalui pengamatan terhadap patung Garuda Wisnu Kencana dari kejauhan, kami memahami bahwa sebuah karya seni tidak hanya memiliki nilai keindahan, tetapi juga mengandung makna filosofis, sejarah, dan identitas budaya.
+Pengalaman menyaksikan pertunjukan Tari Kecak secara langsung juga memberikan kesan tersendiri bagi kelompok kami. Kami dapat melihat bagaimana kesenian tradisional tetap diperkenalkan kepada masyarakat melalui pertunjukan yang menarik dan memiliki ciri khas tersendiri. Hal tersebut menyadarkan kami bahwa kebudayaan merupakan warisan yang harus dijaga agar tidak hilang akibat perkembangan zaman. Sebagai generasi muda, kami memiliki tanggung jawab untuk mengenal, menghargai, dan ikut melestarikan kebudayaan Indonesia.
+Melalui pembelajaran Sejarah, kami memperoleh pemahaman mengenai perkembangan pembangunan patung GWK serta nilai sejarah yang terkandung di dalamnya. Kami belajar bahwa sebuah karya monumental membutuhkan proses panjang, kreativitas, dan kerja sama dari berbagai pihak. Dari pembelajaran Biologi, kami memahami pentingnya menjaga keseimbangan ekosistem serta memperhatikan hubungan antara makhluk hidup dan lingkungan. Sementara itu, melalui Kimia, kami mengetahui bahwa kegiatan pariwisata dapat menghasilkan berbagai jenis sampah yang memerlukan pengelolaan secara tepat agar tidak menimbulkan pencemaran lingkungan.
+Kami juga memperoleh wawasan mengenai hubungan pariwisata dengan kegiatan ekonomi masyarakat. Hal tersebut terlihat dari keberadaan berbagai tempat usaha, seperti rumah makan, minimarket, dan outlet minuman di sepanjang perjalanan menuju GWK. Keberadaan usaha tersebut menunjukkan bahwa sektor pariwisata dapat membuka peluang usaha dan mendukung aktivitas ekonomi di sekitar kawasan wisata. Melalui pembelajaran Bahasa Inggris, kami juga berlatih menyampaikan pendapat mengenai pentingnya mempertahankan kebudayaan tradisional sebagai bagian dari identitas bangsa.
+Kegiatan ini memberikan pelajaran bahwa berwisata bukan hanya sekadar mengunjungi tempat menarik atau menikmati pertunjukan, tetapi juga merupakan kesempatan untuk memperoleh pengetahuan dan pengalaman secara langsung. Kami menyadari bahwa kemajuan pariwisata perlu disertai dengan kesadaran untuk menjaga kebudayaan dan lingkungan. Oleh karena itu, kami berharap pengalaman selama Study Tour ini dapat menjadi motivasi untuk lebih menghargai warisan budaya Indonesia serta menerapkan sikap peduli terhadap lingkungan dalam kehidupan sehari-hari.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+
+<style>
+/* ===== DOKUMENTASI GALERI ===== */
+.destination-gallery {
+  margin-top: 35px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e5edf5;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(16, 42, 67, 0.06);
+}
+
+.destination-gallery h3 {
+  color: #102A43;
+  margin-bottom: 8px;
+}
+
+.destination-gallery p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.photo-item {
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  background: #eaf4fc;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.07);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination-gallery {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .photo-grid {
+    gap: 9px;
+  }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(5, 15, 30, 0.94);
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.lightbox button {
+  position: absolute;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 28px;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 25px;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 14px;
+}
+</style>
+
+<!-- ==========================================
+     DESAIN BARU: BALI TRAVEL EDITORIAL
+     ========================================== -->
+
+<style>
+
+/* WARNA UTAMA */
+
+:root {
+  --navy: #123C3A;
+  --blue: #087F78;
+  --sky: #19B6A5;
+  --ice: #E9F8F4;
+  --white: #FFFFFF;
+  --text: #263D3A;
+  --muted: #71847F;
+  --border: #DCECE6;
+  --shadow: 0 15px 40px rgba(13, 75, 65, .10);
+}
+
+body {
+  background: #FAFCFA;
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: rgba(250, 252, 250, .95);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: var(--navy);
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--sky);
+}
+
+.nav-links a:hover {
+  color: var(--sky);
+}
+
+/* HERO */
+
+.hero {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(25,182,165,.18), transparent 30%),
+    linear-gradient(135deg, #E8F8F3, #D8F2EB);
+  padding: 65px 0;
+}
+
+.hero h1 {
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: #079C8E;
+}
+
+.hero-image img {
+  border: 8px solid white;
+  border-radius: 8px;
+  box-shadow: 0 20px 45px rgba(10, 75, 65, .18);
+  transform: rotate(1deg);
+}
+
+.image-label {
+  border-radius: 4px;
+  border-bottom: 4px solid var(--sky);
+}
+
+/* SECTION */
+
+.section h2 {
+  letter-spacing: -1.5px;
+  font-weight: 800;
+}
+
+.eyebrow {
+  color: #079C8E;
+  letter-spacing: 3px;
+}
+
+/* DARK SECTION */
+
+.dark-section {
+  background: #103D39;
+}
+
+.dark-section .eyebrow {
+  color: #73E0CB;
+}
+
+/* FEATURE CARD */
+
+.feature-card {
+  background: #174E47;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.feature-card img {
+  min-height: 300px;
+}
+
+.feature-info h3 {
+  letter-spacing: -.5px;
+}
+
+.light-card {
+  background: #EAF7F2;
+}
+
+/* DESTINATION CARDS */
+
+.destination-card {
+  background: #174E47;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+}
+
+.destination-card img {
+  transition: transform .5s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.05);
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+/* OBSERVATION */
+
+.subject-tab {
+  border-radius: 5px;
+}
+
+.subject-tab.active,
+.subject-tab:hover {
+  background: #078F82;
+  border-color: #078F82;
+}
+
+.subject-panel {
+  background: #EAF7F2;
+  border-left-color: #13AD9B;
+  border-radius: 6px;
+}
+
+.highlight {
+  background: #EAF7F2;
+  border-left-color: #13AD9B;
+}
+
+/* VIDEO */
+
+.video-section {
+  background: #EDF7F3;
+}
+
+.video-wrapper {
+  border-radius: 9px;
+  box-shadow: var(--shadow);
+}
+
+/* DOCUMENTATION */
+
+.destination-gallery {
+  border-radius: 9px;
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.photo-item {
+  border-radius: 7px;
+}
+
+/* REFLECTION */
+
+.reflection-box {
+  border-radius: 8px;
+  background: rgba(255,255,255,.07);
+}
+
+/* BUTTON */
+
+.btn {
+  background: #078F82;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #105C52;
+}
+
+/* PRESENTATION BUTTON */
+
+.present-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 800;
+  border-radius: 6px;
+  background: #078F82;
+  padding: 14px 21px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.18);
+  transition: .25s;
+}
+
+.present-btn:hover {
+  background: #105C52;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   CLEAN SCROLLING PRESENTATION MODE
+   ========================================== */
+
+.presentation-controls {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  left: auto;
+  transform: none;
+  z-index: 10000;
+  background: #103D39;
+  border-radius: 7px;
+  padding: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.presentation-controls button {
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 17px;
+  font-size: 13px;
+  background: #078F82;
+  color: white;
+  cursor: pointer;
+}
+
+.presentation-controls button:hover {
+  background: #19B6A5;
+}
+
+/* HILANGKAN NAVIGASI SAAT PRESENTASI */
+
+body.presentation .navbar,
+body.presentation .present-btn,
+body.presentation .progress-track {
+  display: none !important;
+}
+
+/* CLEAN SCROLLING */
+
+body.presentation {
+  scroll-snap-type: none;
+  overflow-x: hidden;
+}
+
+body.presentation > section {
+  min-height: auto;
+  display: block;
+  padding: 75px 0;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+}
+
+body.presentation > section > .container {
+  max-height: none;
+  overflow: visible;
+}
+
+body.presentation .hero {
+  min-height: auto;
+  padding: 75px 0;
+}
+
+body.presentation .hero-inner {
+  max-height: none;
+}
+
+body.presentation .hero-image {
+  height: 460px;
+}
+
+body.presentation .destination-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+body.presentation .destination-card img {
+  height: 225px;
+}
+
+body.presentation .card-info {
+  padding: 22px;
+}
+
+body.presentation .feature-card img {
+  height: 370px;
+}
+
+body.presentation .feature-info {
+  padding: 38px;
+}
+
+body.presentation .feature-info h3 {
+  font-size: 27px;
+}
+
+body.presentation .feature-info p {
+  font-size: 14px;
+}
+
+body.presentation .reflection-box {
+  max-height: none;
+  overflow: visible;
+}
+
+/* TOMBOL KELUAR PRESENTASI */
+
+body.presentation .presentation-controls {
+  display: flex;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+  body.presentation .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 650px) {
+
+  body.presentation > section {
+    min-height: auto;
+    padding: 55px 0;
+  }
+
+  body.presentation .hero {
+    padding: 55px 0;
+  }
+
+  body.presentation .hero-image {
+    height: 310px;
+  }
+
+  body.presentation .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.presentation .destination-card img {
+    height: 225px;
+  }
+
+  body.presentation .feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.presentation .feature-card img {
+    height: 250px;
+  }
+
+  body.presentation .feature-info {
+    padding: 25px;
+  }
+
+  body.presentation .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.presentation .presentation-controls {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+</style>
+
+<!-- ===== GALERI DOKUMENTASI ===== -->
+<section class="section" id="dokumentasi">
+  <div class="container">
+
+    <p class="eyebrow">MEMORIES</p>
+    <h2>Dokumentasi Perjalanan</h2>
+
+    <p class="section-desc">
+      Galeri foto kegiatan Study Tour SMAMDELA 2026.
+      Klik foto untuk melihat dokumentasi lebih jelas.
+    </p>
+
+
+    <!-- 1. ITS -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Institut Teknologi Sepuluh Nopember</h3>
+      <p>Kegiatan kunjungan dan pengenalan lingkungan kampus ITS.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/its-1.jpg" alt="Dokumentasi ITS 1"></div>
+        <div class="photo-item"><img src="assets/images/its-2.jpg" alt="Dokumentasi ITS 2"></div>
+        <div class="photo-item"><img src="assets/images/its-3.jpg" alt="Dokumentasi ITS 3"></div>
+        <div class="photo-item"><img src="assets/images/its-4.jpg" alt="Dokumentasi ITS 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 2. SARI ROTI -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi PT Nippon Indosari Corpindo</h3>
+      <p>Kegiatan kunjungan industri dan pengamatan proses produksi.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/sari-roti-1.jpg" alt="Dokumentasi Sari Roti 1"></div>
+        <div class="photo-item"><img src="assets/images/sari-roti-2.jpg" alt="Dokumentasi Sari Roti 2"></div>
+        <div class="photo-item"><img src="assets/images/sari-roti-3.jpg" alt="Dokumentasi Sari Roti 3"></div>
+        <div class="photo-item"><img src="assets/images/sari-roti-4.jpg" alt="Dokumentasi Sari Roti 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 3. BEDUGUL -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Bedugul</h3>
+      <p>Dokumentasi perjalanan dan pengamatan lingkungan di kawasan Bedugul.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/bedugul-1.jpg" alt="Dokumentasi Bedugul 1"></div>
+        <div class="photo-item"><img src="assets/images/bedugul-2.jpg" alt="Dokumentasi Bedugul 2"></div>
+        <div class="photo-item"><img src="assets/images/bedugul-3.jpg" alt="Dokumentasi Bedugul 3"></div>
+        <div class="photo-item"><img src="assets/images/bedugul-4.jpg" alt="Dokumentasi Bedugul 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 4. PENGLIPURAN -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Desa Penglipuran</h3>
+      <p>Dokumentasi suasana desa, budaya, dan kehidupan masyarakat setempat.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/penglipuran-1.jpg" alt="Dokumentasi Penglipuran 1"></div>
+        <div class="photo-item"><img src="assets/images/penglipuran-2.jpg" alt="Dokumentasi Penglipuran 2"></div>
+        <div class="photo-item"><img src="assets/images/penglipuran-3.jpg" alt="Dokumentasi Penglipuran 3"></div>
+        <div class="photo-item"><img src="assets/images/penglipuran-4.jpg" alt="Dokumentasi Penglipuran 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 5. PANTAI PANDAWA -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Pantai Pandawa</h3>
+      <p>Dokumentasi keindahan alam dan kegiatan selama berada di Pantai Pandawa.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/pandawa-1.jpg" alt="Dokumentasi Pandawa 1"></div>
+        <div class="photo-item"><img src="assets/images/pandawa-2.jpg" alt="Dokumentasi Pandawa 2"></div>
+        <div class="photo-item"><img src="assets/images/pandawa-3.jpg" alt="Dokumentasi Pandawa 3"></div>
+        <div class="photo-item"><img src="assets/images/pandawa-4.jpg" alt="Dokumentasi Pandawa 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 6. GWK -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Garuda Wisnu Kencana</h3>
+      <p>Dokumentasi kunjungan ke kawasan GWK dan pertunjukan Tari Kecak.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/gwk-1.jpg" alt="Dokumentasi GWK 1"></div>
+        <div class="photo-item"><img src="assets/images/gwk-2.jpg" alt="Dokumentasi GWK 2"></div>
+        <div class="photo-item"><img src="assets/images/gwk-3.jpg" alt="Dokumentasi GWK 3"></div>
+        <div class="photo-item"><img src="assets/images/gwk-4.jpg" alt="Dokumentasi GWK 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 7. BAJRA SANDHI -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Museum Bajra Sandhi</h3>
+      <p>Dokumentasi kunjungan dan pengamatan sejarah perjuangan rakyat Bali.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/bajra-sandhi-1.jpg" alt="Dokumentasi Bajra Sandhi 1"></div>
+        <div class="photo-item"><img src="assets/images/bajra-sandhi-2.jpg" alt="Dokumentasi Bajra Sandhi 2"></div>
+        <div class="photo-item"><img src="assets/images/bajra-sandhi-3.jpg" alt="Dokumentasi Bajra Sandhi 3"></div>
+        <div class="photo-item"><img src="assets/images/bajra-sandhi-4.jpg" alt="Dokumentasi Bajra Sandhi 4"></div>
+      </div>
+    </div>
+
+
+    <!-- 8. TANAH LOT -->
+    <div class="destination-gallery">
+      <h3>Dokumentasi Tanah Lot</h3>
+      <p>Dokumentasi keindahan alam dan kawasan wisata Tanah Lot.</p>
+
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/images/tanah-lot-1.jpg" alt="Dokumentasi Tanah Lot 1"></div>
+        <div class="photo-item"><img src="assets/images/tanah-lot-2.jpg" alt="Dokumentasi Tanah Lot 2"></div>
+        <div class="photo-item"><img src="assets/images/tanah-lot-3.jpg" alt="Dokumentasi Tanah Lot 3"></div>
+        <div class="photo-item"><img src="assets/images/tanah-lot-4.jpg" alt="Dokumentasi Tanah Lot 4"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">×</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Foto sebelumnya">‹</button>
+
+  <img id="lightboxImage" src="" alt="Foto dokumentasi diperbesar">
+
+  <button class="lightbox-next" id="lightboxNext" aria-label="Foto berikutnya">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<!-- KONTROL CLEAN SCROLLING PRESENTATION -->
+<div class="presentation-controls">
+  <button onclick="exitPresentation()">
+    ✕ Keluar Presentasi
+  </button>
+</div>
+
+<script>
+// ===== LIGHTBOX MULTI GALLERY =====
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCounter = document.getElementById("lightboxCounter");
+
+let galleryImages = [];
+let currentImage = 0;
+
+
+// Menampilkan foto
+function showImage(index) {
+  if (galleryImages.length === 0) return;
+
+  currentImage = (index + galleryImages.length) % galleryImages.length;
+
+  lightboxImage.src = galleryImages[currentImage].src;
+  lightboxImage.alt = galleryImages[currentImage].alt;
+
+  lightboxCounter.textContent =
+    `${currentImage + 1} / ${galleryImages.length}`;
+}
+
+
+// Membuka foto
+function openLightbox(index, images) {
+  galleryImages = images;
+
+  showImage(index);
+
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+
+// Menutup foto
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+
+// Mengaktifkan semua galeri secara terpisah
+document.querySelectorAll(".photo-grid").forEach(grid => {
+  const images = [...grid.querySelectorAll("img")];
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      openLightbox(index, images);
+    });
+  });
+});
+
+
+// Tombol navigasi
+document.getElementById("lightboxClose")
+  .addEventListener("click", closeLightbox);
+
+document.getElementById("lightboxPrev")
+  .addEventListener("click", () => {
+    showImage(currentImage - 1);
+  });
+
+document.getElementById("lightboxNext")
+  .addEventListener("click", () => {
+    showImage(currentImage + 1);
+  });
+
+
+// Klik area gelap untuk menutup
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+
+// Navigasi keyboard
+document.addEventListener("keydown", event => {
+  if (!lightbox.classList.contains("active")) return;
+
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") showImage(currentImage - 1);
+  if (event.key === "ArrowRight") showImage(currentImage + 1);
+});
+
+
+// ==========================================
+// CLEAN SCROLLING PRESENTATION MODE
+// ==========================================
+
+
+// Memulai mode presentasi
+function startPresentation() {
+  document.body.classList.add("presentation");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  }
+}
+
+
+// Keluar dari mode presentasi
+function exitPresentation() {
+  document.body.classList.remove("presentation");
+
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(() => {});
+  }
+}
+
+
+// Keyboard Escape untuk keluar dari presentasi
+document.addEventListener("keydown", function(event) {
+  if (!document.body.classList.contains("presentation")) return;
+
+  // Jika lightbox terbuka, Escape tetap untuk menutup lightbox
+  if (lightbox.classList.contains("active")) return;
+
+  if (event.key === "Escape") {
+    exitPresentation();
+  }
+});
+
+
+// Jika fullscreen ditutup, presentasi ikut berhenti
+document.addEventListener("fullscreenchange", function() {
+  if (!document.fullscreenElement) {
+    document.body.classList.remove("presentation");
+  }
+});
+
+
+// ===== MOBILE MENU =====
+
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+
+
+// Menutup menu setelah salah satu link dipilih
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navMenu").classList.remove("active");
+  });
+});
+
+
+// ===== SCROLL PROGRESS =====
+
+window.addEventListener("scroll", function() {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const progress = scrollHeight > 0
+    ? (scrollTop / scrollHeight) * 100
+    : 0;
+
+  document.getElementById("progressBar").style.width = progress + "%";
+});
+
+
+// ===== SUBJECT TABS =====
+
+document.querySelectorAll(".subject-tab").forEach(tab => {
+  tab.addEventListener("click", function() {
+    const target = this.dataset.tab;
+
+    document.querySelectorAll(".subject-tab").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    document.querySelectorAll(".subject-panel").forEach(panel => {
+      panel.classList.remove("active");
+    });
+
+    this.classList.add("active");
+
+    const targetPanel = document.getElementById(target);
+
+    if (targetPanel) {
+      targetPanel.classList.add("active");
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
